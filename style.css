@@ -1,0 +1,21 @@
+#three-container {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  position: relative;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  #three-container {
+    max-width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  #three-container {
+    max-width: 250px;
+    height: 250px;
+  }
+}
