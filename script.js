@@ -99,5 +99,33 @@
     scrollDelta += (event.deltaY > 0 ? 1 : -1) * scrollStrength;
     isScrolling = true;
   });
+  // Variables to track touch
+let isTouching = false;
+let lastTouchX = 0;
+let touchDeltaX = 0;
+
+// Add these event listeners after "wheel" listener
+container.addEventListener('touchstart', function(event) {
+  if (event.touches.length === 1) {
+    isTouching = true;
+    lastTouchX = event.touches[0].clientX;
+  }
+});
+
+container.addEventListener('touchmove', function(event) {
+  if (isTouching && event.touches.length === 1) {
+    const currentX = event.touches[0].clientX;
+    touchDeltaX = (currentX - lastTouchX) * 0.005; // Adjust sensitivity here
+    lastTouchX = currentX;
+    scrollDelta += touchDeltaX;
+    isScrolling = true;
+    event.preventDefault();
+  }
+});
+
+container.addEventListener('touchend', function(event) {
+  isTouching = false;
+});
+
 
 })();
