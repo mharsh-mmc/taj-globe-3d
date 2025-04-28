@@ -115,7 +115,7 @@ container.addEventListener('touchstart', function(event) {
 container.addEventListener('touchmove', function(event) {
   if (isTouching && event.touches.length === 1) {
     const currentX = event.touches[0].clientX;
-    touchDeltaX = (currentX - lastTouchX) * 0.0005; // Adjust sensitivity here
+    touchDeltaX = (currentX - lastTouchX) * 0.0001; // Adjust sensitivity here
     lastTouchX = currentX;
     scrollDelta += touchDeltaX;
     isScrolling = true;
