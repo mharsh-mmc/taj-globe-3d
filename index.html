@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="three-container"></div>
+    <main class="layout">
+      <div id="three-container"></div>
+      <section id="booking-info" aria-labelledby="booking-heading">
+        <h1 id="booking-heading">Booking Details</h1>
+        <div id="booking-content" role="list"></div>
+      </section>
+    </main>
     <script src="https://unpkg.com/three@0.156.1/build/three.min.js"></script>
     <script src="script.js"></script>
   </body>
